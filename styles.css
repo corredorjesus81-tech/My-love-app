@@ -1,0 +1,254 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #8B1538 0%, #F8BBD9 50%, #87CEEB 100%);
+}
+
+/* Pantallas */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Pantalla de Bienvenida */
+.gradient-background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B1538 0%, #F8BBD9 50%, #87CEEB 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-content {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    max-width: 350px;
+}
+
+.logo {
+    margin-bottom: 1.5rem;
+}
+
+.heart {
+    font-size: 4rem;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.welcome-message {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.welcome-message p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.start-btn {
+    background: linear-gradient(45deg, #8B1538, #F8BBD9);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Pantalla Principal */
+#main-screen {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #8B1538, #F8BBD9);
+    color: white;
+    padding: 1.5rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.bot-avatar {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.bot-info h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+}
+
+.bot-info p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.chat-container {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    display: flex;
+    max-width: 80%;
+}
+
+.bot-message {
+    align-self: flex-start;
+}
+
+.user-message {
+    align-self: flex-end;
+}
+
+.message-bubble {
+    padding: 1rem 1.2rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    animation: messageSlide 0.3s ease-out;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-message .message-bubble {
+    background: linear-gradient(135deg, #8B1538, #a91d42);
+    color: white;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message .message-bubble {
+    background: linear-gradient(135deg, #F8BBD9, #fac8e0);
+    color: #333;
+    border-bottom-right-radius: 5px;
+}
+
+/* Botones de Acción */
+.action-buttons {
+    padding: 1rem;
+    background: white;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #87CEEB, #a8d8f0);
+    color: #333;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.action-btn.love-phrase {
+    background: linear-gradient(135deg, #F8BBD9, #fac8e0);
+}
+
+.action-btn.magic-message {
+    background: linear-gradient(135deg, #87CEEB, #a8d8f0);
+}
+
+.action-btn.love-reminder {
+    background: linear-gradient(135deg, #d4a5d4, #e6b8e6);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .welcome-content {
+        padding: 1rem;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .welcome-message {
+        padding: 1rem;
+    }
+    
+    .action-buttons {
+        padding: 0.8rem;
+    }
+    
+    .action-btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiCielo - App Romántica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Bienvenida -->
+    <div id="welcome-screen" class="screen active">
+        <div class="gradient-background">
+            <div class="welcome-content">
+                <div class="logo">
+                    <div class="heart">💖</div>
+                </div>
+                <h1 class="app-title">MiCielo</h1>
+                <div class="welcome-message">
+                    <p>Hola mi cielo 🌙, soy <strong>Cuchurrumí</strong>,<br>
+                    creado por Jesús 💖.<br>
+                    ¿Cómo estás hoy?</p>
+                </div>
+                <button class="start-btn" onclick="showMainScreen()">Comenzar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla Principal / Chat -->
+    <div id="main-screen" class="screen">
+        <div class="chat-header">
+            <div class="bot-avatar">💖</div>
+            <div class="bot-info">
+                <h2>Cuchurrumí</h2>
+                <p>Tu compañero romántico</p>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <div class="message bot-message">
+                    <div class="message-bubble">
+                        ¡Hola mi amor! 💕 Estoy aquí para llenarte de cariño. ¿Qué te gustaría escuchar hoy? ✨
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn love-phrase" onclick="showLovePhrase()">
+                💌 Otra frase de amor
+            </button>
+            <button class="action-btn magic-message" onclick="showMagicMessage()">
+                ✨ Mensaje mágico
+            </button>
+            <button class="action-btn love-reminder" onclick="showLoveReminder()">
+                🌙 Recordatorio de amor
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
